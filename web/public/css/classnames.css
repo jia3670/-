@@ -4,7 +4,7 @@
 }
 
 #d1 {
-    width: 1200px;
+    width: 800px;
     margin: 50px auto;
 }
 table{
@@ -49,31 +49,10 @@ tbody>tr>td {
     width: 12%;
 }
 thead>tr>th:nth-of-type(3) {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-thead>tr>th:nth-of-type(4) {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-tbody>tr>td:nth-of-type(3) {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-tbody>tr>td:nth-of-type(4) {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-thead>tr>th:nth-of-type(5) {
     width: 20%;
 }
 
-thead>tr>th:nth-of-type(6) {
+thead>tr>th:nth-of-type(4) {
     background-color: lightblue;
 }
 
@@ -115,14 +94,34 @@ tbody>tr>td>button:nth-of-type(1) {
 }
 
 body>p {
-    text-align: center;
-    margin: 30px auto 0px;
+    text-align: left;
+    margin: 30px 300px;
+    height: 40px;
 }
 
 body>p>button {
-    padding: 5px;
+    vertical-align: top;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 5px 20px;
+    border: none;
+    color: white;
+    border-radius: 0px 5px 5px 0px;
+    background-color: #4E6EF2;
+    font-size: 18px;
+    font-weight:bold;
+    font-family: "宋体";
 }
 
 body>p>input {
+    vertical-align: top;
+    width: 300px;
     padding: 5px;
+    height: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgb(195,199,206);
+    border-radius: 5px 0px 0px 5px;
+    outline: none;
+    font-size: 16px;
+    font-weight: bold;
 }

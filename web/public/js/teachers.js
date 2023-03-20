@@ -46,7 +46,7 @@ class Teacher {
 }
 //添加老师数据
 function tianjia() {
-    if ($("#teachername1").val().replace(/\s*/g, "") == '' || $("#classname1").val().replace(/\s*/g, "") == '') {
+    if ($("#teachername1").val().replace(/\s*/g, "") == '' || $("#classname1").val()==null) {
         tsy("教师名称或班级名称不得为空")
         return
     }

@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*文字禁止选中*/
+    user-select: none;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ecf0f3;
+}
+
+.page {
+    width: 900px;
+    height: 540px;
+    display: flex;
+    box-shadow: 10px 10px 10px #d1d9e6, -10px -10px 10px #f9f9f9;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+.reg-left,
+.login-right {
+    width: 360px;
+    height: 100%;
+    box-shadow: 4px 4px 10px #d1d9e6, -4px -4px 10px #d1d9e6;
+    padding: 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    transition: 1.5s ease;
+}
+
+.reg-right,
+.login-left {
+    width: 560px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: 1.5s ease;
+}
+
+.login-right {
+    position: absolute;
+    right: -380px;
+    top: 0;
+    background-color: #ecf0f3;
+
+}
+
+.login-left {
+    position: absolute;
+    left: -580px;
+    top: 0;
+}
+
+.reg-left {
+    position: absolute;
+    left: -400px;
+    top: 0;
+    background-color: #ecf0f3;
+    z-index: 2;
+}
+
+.reg-right {
+    position: absolute;
+    right: -600px;
+    top: 0;
+}
+
+.reg-left h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #181818;
+}
+
+.reg-left p,
+.login-right p {
+    font-size: 12px;
+    text-align: center;
+    color: #a0a5a8;
+    margin: 30px 0;
+    letter-spacing: 1px;
+}
+
+.reg-left button,
+.login-right button {
+    width: 145px;
+    height: 40px;
+    border: none;
+    background-color: #4b70e2;
+    color: #f9f9f9;
+    border-radius: 25px;
+    letter-spacing: 5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.reg-right input,
+.login-left input {
+    width: 315px;
+    height: 36px;
+    margin: 8px;
+    padding-left: 25px;
+    font-size: 12px;
+    border: none;
+    outline: none;
+    transition: 0.25s ease;
+    background-color: #ecf0f3;
+    border-radius: 8px;
+    box-shadow: inset 2px 2px 4px #d1d9e6, inset -2px -2px 4px #f9f9f9;
+}
+
+.reg-right input:focus,
+.login-left input:focus {
+    box-shadow: inset 4px 4px 4px #d1d9e6, inset -4px -4px 4px #f9f9f9;
+}
+
+.reg-right h2,
+.login-left h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #181818;
+    letter-spacing: 10px;
+    margin-bottom: 50px;
+}
+
+.reg-right button,
+.login-left button {
+    margin-top: 30px;
+    width: 145px;
+    height: 40px;
+    border: none;
+    background-color: #4b70e2;
+    color: #f9f9f9;
+    border-radius: 25px;
+    letter-spacing: 5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.reg-right button:hover,
+.login-left button:hover,
+.reg-left button:hover,
+.login-right button:hover {
+    transform: translateY(-5px);
+    transition: .5s;
+    background-color: #4662d9;
+}
+
+/*圆圈*/
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background-color: #ecf0f3;
+    box-shadow: inset 8px 8px 12px #b8bec7, inset -8px -8px 12px #fff;
+}
+
+.cir-big {
+    width: 450px;
+    height: 450px;
+    bottom: -320px;
+    left: -220px;
+}
+
+.cir-small {
+    width: 270px;
+    height: 270px;
+    top: -140px;
+    left: 230px;
+}
+
+#window {
+    width: 250px;
+    height: 40px;
+    position: absolute;
+    top: -50px;
+    left: 45%;
+    box-shadow: 5px 5px 5px #d1d9e6, -5px -5px 5px #f9f9f9;
+    border-radius: 8px;
+    text-align: center;
+    line-height: 40px;
+    color: #7d8184;
+    font-weight: bold;
+    opacity: 0;
+    transition: .8s ease;
+}
+
+#regx2>p {
+    position: relative;
+    width: 250px;
+    line-height: 400%;
+}
+
+#regx2>p>input {
+    width: 200px;
+}
+
+#regx2>p>span {
+    position: absolute;
+    display: none;
+    right: -110px;
+    bottom: 0px;
+}
+
+.reg-right select,
+.login-left select {
+    width: 100px;
+    height: 36px;
+    margin: 8px;
+    padding-left: 25px;
+    font-size: 12px;
+    border: none;
+    outline: none;
+    transition: 0.25s ease;
+    background-color: #ecf0f3;
+    border-radius: 8px;
+    box-shadow: inset 2px 2px 4px #d1d9e6, inset -2px -2px 4px #f9f9f9;
+}

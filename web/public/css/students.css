@@ -101,14 +101,34 @@ tbody>tr>td>button:nth-of-type(1) {
 }
 
 body>p {
-    text-align: center;
-    margin: 30px auto 0px;
+    text-align: left;
+    margin: 30px 48px;
+    height: 40px;
 }
 
 body>p>button {
-    padding: 5px;
+    vertical-align: top;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 5px 20px;
+    border: none;
+    color: white;
+    border-radius: 0px 5px 5px 0px;
+    background-color: #4E6EF2;
+    font-size: 18px;
+    font-weight:bold;
+    font-family: "宋体";
 }
 
 body>p>input {
+    vertical-align: top;
+    width: 300px;
     padding: 5px;
+    height: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgb(195,199,206);
+    border-radius: 5px 0px 0px 5px;
+    outline: none;
+    font-size: 16px;
+    font-weight: bold;
 }

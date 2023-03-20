@@ -18,7 +18,7 @@ xr = () => {
 xr()
 //清除空格
 function qkg(ew) {
-    let qkgh = ew.replace(/\s*/g, "");
+    let qkgh = ew.replace(/\s*/g,"");
     return qkgh
 }
 //调用渲染班级
@@ -58,7 +58,7 @@ class Student {
 }
 //添加学生数据
 function tianjia() {
-    if ($("#stu_name").val().replace(/\s*/g, "") == '' || $("#stu_age").val().replace(/\s*/g, "") == '' || stu_sex() == '' || $("#classname1").val().replace(/\s*/g, "") == '') {
+    if ($("#stu_name").val().replace(/\s*/g, "") == '' || $("#stu_age").val().replace(/\s*/g, "") == '' || stu_sex() == '' || $("#classname1").val() ==null) {
         tsy("所有数据均要添加")
         return
     }

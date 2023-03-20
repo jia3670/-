@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <script src="../public/utils/jquery.min.js"></script>
+    <link rel="stylesheet" href="../public/css/register.css">
+</head>
+
+<body>
+    <!-- 弹窗-->
+    <div class="page">
+        <!--注册页面-->
+        <div class="reg-left" id="regx1">
+            <!--圆圈-->
+            <div class="circle cir-big"></div>
+            <div class="circle cir-small"></div>
+            <h2>欢迎注册</h2>
+            <p>是否拥有一个账号可以点击登录进入登录页面</p>
+            <button id="go-login">登录</button>
+        </div>
+        <div class="reg-right" id="regx2">
+            <h2>注册账号</h2>
+            <p><input type="text" placeholder="用户名" id="user">
+                <span id="usere"></span>
+            <p><input type="password" placeholder="密码" id="password">
+                <span id="passworde"></span>
+            </p>
+            <p><input type="password" placeholder="确认密码" id="passwordz">
+                <span id="passwordze"></span>
+            </p>
+            <p><select id="quanxian">
+                    <option value="1">用户</option>
+                    <option value="0">管理员</option>
+                </select></p>
+            <button id="register">注册</button>
+        </div>
+        <!--登录页面-->
+        <div class="login-left" id="logx1">
+            <h2>登录账号</h2>
+            <input type="text" placeholder="用户名" id="userl">
+            <input type="password" placeholder="密码" id="passwordl">
+            <button id="login">登录</button>
+        </div>
+        <div class="login-right" id="logx2">
+            <!--圆圈-->
+            <div class="circle cir-big"></div>
+            <div class="circle cir-small"></div>
+            <h2>欢迎登录</h2>
+            <p>如果需要一个账号请点击注册跳转</p>
+            <button id="go-reg">点我注册</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script src="../public/js/register.js"></script>
+<script src="../public/js/logon.js"></script>
+<script src="../public/js/sign-in.js"></script>

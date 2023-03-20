@@ -25,14 +25,12 @@ function qkg(ew) {
 class Class {
     constructor(id, classname) {
         this.id = id,
-            this.classname = classname,
-            this.tid = [],
-            this.stuid=[]
+        this.classname = classname
     }
 }
 //添加班级数据
 function tianjia() {
-    if ($("#classname1").val().replace(/\s*/g, "") == '') {
+    if ($("#classname1").val().replace(/\s*/g, "")==null) {
         tsy("班级名称不得为空")
         return
     }
@@ -64,6 +62,14 @@ function shan(id) {
         success: (eew) => {
             if (eew == "z") {
                 tsy("删除成功");
+                xr()
+            }
+            if (eew == "t") {
+                tsy("班级里面有老师无法删除");
+                xr()
+            }
+            if (eew == "x") {
+                tsy("班级里面有学生无法删除");
                 xr()
             }
         }

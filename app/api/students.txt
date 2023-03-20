@@ -1,1 +1,1 @@
-[{"id":1,"stu_name":"晓晓","stu_age":22,"stu_sex":"女","classname":1},{"id":2,"stu_name":"小溪","stu_age":20,"stu_sex":"女","classname":3}]
+[{"id":1,"stu_name":"小猫同学","stu_age":19,"stu_sex":"女","classname":1},{"id":2,"stu_name":"小萌同学","stu_age":19,"stu_sex":"女","classname":1}]
