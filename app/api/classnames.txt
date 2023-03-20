@@ -1,0 +1,1 @@
+[{"id":1,"classname":"UI班","tid":[7,8],"stuid":[1]},{"id":2,"classname":"后端班","tid":[],"stuid":[]},{"id":3,"classname":"测试班","tid":[],"stuid":[2]},{"id":4,"classname":"前端班","tid":[],"stuid":[]}]

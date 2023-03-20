@@ -1,0 +1,101 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#d1 {
+    width: 800px;
+    border: 1px solid #000;
+    margin: 50px auto;
+}
+
+thead>tr>th {
+    width: 110px;
+    max-width: 110px;
+    height: 40px;
+    line-height: 30px;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 70px;
+    font-weight: bold;
+}
+
+#ts {
+    padding: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 3%;
+    background-color: rgb(1, 150, 88);
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 20px;
+    z-index: 99999;
+    display: none;
+}
+
+thead>tr>th:nth-of-type(8) {
+    background-color: lightblue;
+}
+
+table {
+    table-layout: fixed
+}
+
+tbody {
+    text-align: center;
+
+}
+
+tbody>tr {
+    height: 50px;
+    line-height: 50px;
+}
+
+tbody>tr>td {
+    max-width: 50px;
+    height: 100%;
+    width: 12%;
+}
+
+tbody>tr>td:nth-of-type(6) {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+tbody>tr>td>button {
+    width: 40%;
+    height: 40px;
+    line-height: 40px;
+}
+
+tbody>tr>td>button:nth-of-type(2) {
+    margin-left: 5%;
+}
+
+tbody>tr>td>button:nth-of-type(1) {
+    margin-right: 5%;
+}
+
+.modal-footer {
+    text-align: center;
+}
+
+body>p {
+    text-align: center;
+    margin: 30px auto 0px;
+}
+
+body>p>button {
+    padding: 5px;
+}
+
+body>p>input {
+    padding: 5px;
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../public/utils/jquery.min.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            /* box-sizing: border-box; */
+        }
+
+        #ts {
+            width: 100px;
+            height: 40px;
+            padding: 10px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 10%;
+            background-color: grey;
+            color: black;
+            text-align: center;
+            border-radius: 5px;
+            font-size: 20px;
+            line-height: 40px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    用户名:<input type="text" name="" value="" id="username"><br>
+    密码:<input type="text" name="" value="" id="psd"><br>
+    <button id="get">get注册</button>
+    <button id="post">post提交</button>
+    <button id="delete">delete提交</button>
+    <button id="put">put提交</button>
+    <div id="ts">注册成功</div>
+</body>
+
+</html>
+<script>
+    $("#get").click(function () {
+        class Stu {
+            constructor(username, psd) {
+                this.username = username;
+                this.pas = psd;
+            }
+        }
+        let stu = new Stu($("#username").val(), $("#psd").val())
+        $.ajax({
+            type: "get",
+            url: "http://localhost:3000/api/get",
+            data: stu,
+            success: function (ee) {
+                if (ee == "z") {
+                    $("#ts").css("display", "block")
+                }
+            }
+        })
+    })
+    $("#post").click(function () {
+        class Stu {
+            constructor(username, psd) {
+                this.username = username;
+                this.pas = psd;
+            }
+        }
+        let stu = new Stu($("#username").val(), $("#psd").val())
+        $.ajax({
+            type: "post",
+            url: "http://localhost:3000/api/post",
+            data: stu,
+            success: function (ee) {
+                if (ee == "z") {
+                    $("#ts").html("注册成功")
+                    $("#ts").fadeToggle(800);
+                    $("#ts").fadeToggle(800);
+                    $("#username").val(""),
+                    $("#psd").val("")
+                } else if (ee == "c") {
+                    $("#ts").html("用户名重复")
+                    $("#ts").fadeToggle(800);
+                    $("#ts").fadeToggle(800);
+                }
+            }
+        })
+    })
+    $("#delete").click(function () {
+        // class Stu{
+        //     constructor(username,psd){
+        //         this.username = username;
+        //         this.pas = psd;
+        //     }
+        // }
+        // let stu=new Stu($("#username").val(),$("#psd").val())
+        let s = {
+            user: "张三",
+            password: 3123
+        }
+        $.ajax({
+            type: "delete",
+            url: "http://localhost:3000/api/delete",
+            data: s,
+            success: function (ee) {
+                console.log(ee);
+            }
+        })
+    })
+    $("#put").click(function () {
+        // class Stu{
+        //     constructor(username,psd){
+        //         this.username = username;
+        //         this.pas = psd;
+        //     }
+        // }
+        // let stu=new Stu($("#username").val(),$("#psd").val())
+        let s = {
+            user: "张三",
+            password: 3123
+        }
+        $.ajax({
+            type: "put",
+            url: "http://localhost:3000/api/put",
+            data: s,
+            success: function (ee) {
+                console.log(ee);
+            }
+        })
+    })
+     //get 查找
+     //post 添加
+     //delete 删除
+     //put 修改
+</script>

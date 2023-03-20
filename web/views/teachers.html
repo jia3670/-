@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教师表</title>
+    <script src="../public/utils/jquery.min.js"></script>
+    <script src="../public/utils/bootstrap3.3.7.min.js"></script>
+    <link rel="stylesheet" href="../public/utils/bootstrap3.3.7.min.css">
+    <link rel="stylesheet" href="../public/css/teachers.css">
+</head>
+
+<body>
+    <h1>教师表</h1>
+    <p><input type="text" id="chazhao"><button onclick="chazhao()">查找</button></p>
+    <div id="d1">
+        <table border="1px">
+            <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>教师名称</th>
+                    <th>所属班级</th>
+                    <th>操作</th>
+                    <th data-target="#myModal" data-toggle="modal" onclick="xrtj()">添加老师</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+            </tbody>
+        </table>
+    </div>
+    <!-- 模态框添加老师 -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body" style="height:100px;">
+                    <p>教师名称：<input type="text" name="" id="teachername1"></p>
+                    <p>班级名称<select name="" id="classname1"></select></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default quxiao1" data-dismiss="modal">关闭
+                    </button>
+                    <button type="button" class="btn btn-primary" id="tianjia" onclick="tianjia()">
+                        添加
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 模态框修改老师 -->
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body" style="height:100px;">
+                    <p>教师名称：<input type="text" name="" id="teachername2"></p>
+                    <p>班级名称：<select name="" id="classname2"></select></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default quxiao1" data-dismiss="modal">关闭
+                    </button>
+                    <button type="button" class="btn btn-primary" id="xg" onclick="xg()">
+                        修改
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="ts">添加老师成功</div>
+</body>
+
+</html>
+<script src="../public/js/teachers.js"></script>
