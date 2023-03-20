@@ -5,242 +5,78 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>学生表</title>
     <script src="../public/utils/jquery.min.js"></script>
-    <script src="../public/utils/mock-min.js"></script>
-    <style>
-        * {
-            padding: 0px;
-            margin: 0px;
-        }
-
-        #tian {
-            width: 300px;
-            height: 250px;
-            border: 1px solid #000;
-        }
-
-        #tian>p {
-            height: 40px;
-            line-height: 40px;
-        }
-
-        #xiu {
-            position: absolute;
-            right: 0px;
-            top: 0px;
-            width: 300px;
-            height: 250px;
-            border: 1px solid #000;
-            display: none;
-        }
-
-        #xiu>p {
-            height: 40px;
-            line-height: 40px;
-        }
-
-        #ts {
-            width: 200px;
-            height: 50px;
-            line-height: 50px;
-            font-size: 20px;
-            position: absolute;
-            background-color: darkseagreen;
-            left: 50%;
-            transform: translateY(-50%);
-            text-align: center;
-            top: 10%;
-            border-radius: 5px;
-            display: none;
-        }
-    </style>
+    <script src="../public/utils/bootstrap3.3.7.min.js"></script>
+    <link rel="stylesheet" href="../public/utils/bootstrap3.3.7.min.css">
+    <link rel="stylesheet" href="../public/css/students.css">
 </head>
 
 <body>
-    <div id="tian">
-        <p>学生姓名:<input type="text" id="stu_name"></p>
-        <p>学生年龄:<input type="text" id="stu_age"></p>
-        <p>学生性别:<input type="radio" name="sex" value="男" id="stu_man" checked=true>男<input type="radio" name="sex"
-                value="女" id="stu_woman">女</p>
-        <p>班级名称:<select id="box"></select></p>
-        <p>老师名称:<select id="teacher"></select></p>
-        <p><button onclick="tj()">添加</button> </p>
+    <h1>学生表</h1>
+    <p><input type="text" id="chazhao"><button onclick="chazhao()">查找</button></p>
+    <div id="d1">
+        <table>
+            <thead>
+                <tr>
+                    <th>学生序号</th>
+                    <th>学生姓名</th>
+                    <th>学生年龄</th>
+                    <th>学生性别</th>
+                    <th>班级名称</th>
+                    <th>老师名称</th>
+                    <th>操作</th>
+                    <th data-target="#myModal" data-toggle="modal" onclick="xrtj()">添加学生</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+            </tbody>
+        </table>
     </div>
-    <div id="xiu">
-        <p>学生姓名:<input type="text" id="stu_namex"></p>
-        <p>学生年龄:<input type="text" id="stu_agex"></p>
-        <p>学生性别:<input type="radio" name="sexx" value="男" id="stu_manx">男<input type="radio" name="sexx" value="女"id="stu_womanx">女</p>
-        <p>班级名称:<select id="boxx"></select></p>
-        <p>老师名称:<select id="teacherx"></select></p>
-        <p><button onclick="xg()">修改</button> </p>
+    <!-- 模态框添加老师 -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body" style="height:200px;">
+                    <p>学生姓名：<input type="text" id="stu_name"></p>
+                    <p>学生年龄：<input type="text" id="stu_age"></p>
+                    <p>学生性别：<input type="radio" name="sex" value="男" id="stu_man" checked="checked">男<input type="radio"
+                            name="sex" value="女" id="stu_woman">女</p>
+                    <p>所属班级：<select name="" id="classname1"></select></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default quxiao1" data-dismiss="modal">关闭
+                    </button>
+                    <button type="button" class="btn btn-primary" id="tianjia" onclick="tianjia()">
+                        添加
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
-    <input type="text" name="" id="cha"><button id="cc">查找</button>
-    <table border="2px" width="700px">
-        <thead>
-            <tr>
-                <th>学生序号</th>
-                <th>学生姓名</th>
-                <th>学生年龄</th>
-                <th>学生性别</th>
-                <th>班级名称</th>
-                <th>老师名称</th>
-                <th>操作</th>
-            </tr>
-        </thead>
-        <tbody id="stu_e">
-        </tbody>
-    </table>
-    <div id="ts">添加成功</div>
+    <!-- 模态框修改学生 -->
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body" style="height:200px;">
+                    <p>学生姓名：<input type="text" id="stu_namex"></p>
+                    <p>学生年龄：<input type="text" id="stu_agex"></p>
+                    <p>学生性别：<input type="radio" name="sexx" value="男" id="stu_manx">男<input type="radio" name="sexx"
+                            value="女" id="stu_womanx">女</p>
+                    <p>所属班级：<select name="" id="classname2"></select></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default quxiao1" data-dismiss="modal">关闭
+                    </button>
+                    <button type="button" class="btn btn-primary" id="xg" onclick="xg()">
+                        修改
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="ts">添加学生成功</div>
 </body>
 
 </html>
-<script src="../public/utils/students.js"></script>
-<script>
-
-    let b = 0;
-    let b0 = 0;
-    //渲染
-    //添加
-    function tjts() {
-        $("#ts").fadeToggle(500);
-        $("#ts").fadeToggle(500);
-    }
-    function xgts() {
-        $("#ts").html("修改成功");
-        $("#ts").fadeToggle(500);
-        $("#ts").fadeToggle(500);
-    }
-    function tj() {
-        if ($("#stu_name").val() == '' || $("#stu_age").val() == '' || $("#box").val() == '' || $("#teacher").val() == '') {
-            alert("请全部输入")
-            return
-        }
-        let students = new Student(1, $("#stu_name").val(), $("#stu_age").val(), stu_sex(), $("#box").val(), $("#teacher").val())
-        $.ajax({
-            type: "post",
-            url: "/api/tj",
-            data: JSON.stringify(students),
-            dataType: "json",
-            success: function (enw) {
-                if (enw == true) {
-                    $("#stu_name").val("");
-                    $("#stu_age").val("");
-                    $("#box").val("");
-                    $("#teacher").val("");
-                }
-            }
-        })
-    }
-    Mock.mock("/api/tj", "post", function (data) {
-        let students = JSON.parse(data.body);
-        let student = localStorage.student;
-        debugger
-        if (student == '' || student == undefined || student == '[]') {
-            if (student == undefined) {
-                student = [students]
-                localStorage.student = JSON.stringify(student);
-
-                xuanran()
-                tjts()
-                // $("#ts").hide();
-                return true;
-            } else {
-                student = [students];
-                localStorage.student = JSON.stringify(student);
-
-                xuanran()
-                tjts()
-                return true;
-            }
-        }
-        let student1 = JSON.parse(student)
-        students.id = student1[student1.length - 1].id + 1;
-        student1[student1.length] = students
-        localStorage.student = JSON.stringify(student1);
-
-        xuanran()
-        tjts()
-        return true;
-    })
-    //修改回显
-    function xiu(id) {
-        let student = JSON.parse(localStorage.student);
-        for (i = 0; i < student.length; i++) {
-            if (id == student[i].id) {
-                b = i;
-                b0 = id;
-                $("#stu_namex").val(student[i].stu_name)
-                $("#stu_agex").val(student[i].stu_age)
-                stu_sexx(student[i].stu_sex);
-                $("#boxx").val(student[i].classname)
-                sele("boxx", "teacherx")
-                $("#xiu").css("display", "block")
-            }
-        }
-    }
-    //修改数据
-    function xg() {
-        let students = new Student(b0, $("#stu_namex").val(), $("#stu_agex").val(), stu_sexxg(), $("#boxx").val(), $("#teacherx").val())
-        $.ajax({
-            type: "post",
-            url: "/api/xg",
-            data: JSON.stringify(students),
-            dataType: "json",
-            success: function (eew) {
-                if (eew == true) {
-                    $("#stu_namex").val("");
-                    $("#stu_agex").val("");
-                    $("#boxx").val("");
-                    $("#teacherx").val("");
-                    $("#xiu").css("display", "none")
-                }
-            }
-        })
-    }
-    Mock.mock("/api/xg", "post", function (data) {
-        let students = JSON.parse(data.body);
-        let student = localStorage.student;
-        let student1 = JSON.parse(student)
-        student1[b] = students
-        localStorage.student = JSON.stringify(student1);
-        xuanran()
-        xgts()
-        return true
-    })
-    //查找
-    $("#cc").click(function () {
-        if ($("#cha").val() == '') {
-            xuanran()
-            return
-        }
-        let students = JSON.parse(localStorage.student)
-        let ss = '';
-        for (let i = 0; i < students.length; i++) {
-            if (students[i].stu_name.indexOf($("#cha").val().replace(/\s*/g, "")) >= 0) {
-                ss += `<tr>
-                    <td>${i + 1}</td>
-                    <td>${students[i].stu_name}</td>
-                    <td>${students[i].stu_age}</td>
-                    <td>${students[i].stu_sex}</td>
-                    <td>${clss(students[i].classname)}</td>
-                    <td>${teacher(students[i].teacher)}</td>
-                    <td><button onclick="shan(${students[i].id})">删除</button><button onclick="xiu(${students[i].id})">修改</button></td>
-                    </tr>`
-            }
-        }
-        $("#stu_e").html(ss)
-    })
-    //删除
-    function shan(id) {
-        let students = JSON.parse(localStorage.student)
-        for (let i = 0; i < students.length; i++) {
-            if (id == students[i].id) {
-                students.splice(i, 1)
-                localStorage.student = JSON.stringify(students)
-                xuanran()
-                return
-            }
-        }
-    }
-</script>
+<script src="../public/js/students.js"></script>
