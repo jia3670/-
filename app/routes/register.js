@@ -29,7 +29,6 @@ router.post("/api/addById2", function (req, resp) {
 //登录
 router.post("/api/addById3", function (req, resp) {
     let query = req.body;
-    console.log(query);
     let use = fs.readFileSync("./api/register.txt");
     let usec = fs.readFileSync("./api/register.txt", "utf-8");
     if (usec == '[]' || usec == '' || usec == undefined) {

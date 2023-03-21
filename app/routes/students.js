@@ -49,7 +49,6 @@ router.post("/api/stupost", (req, resp) => {
               <td>${cla(students[i].classname)}</td>
               <td>${thname(students[i].classname)}</td>
               <td><button onclick="shan(${students[i].id})">删除</button><button onclick="xiugai(${students[i].id})" data-target="#myModal2" data-toggle="modal">修改</button></td>
-              <td></td>
             </tr>`
     }
     return resp.send(s)
@@ -118,7 +117,6 @@ router.put("/api/stuputxiugai", (req, resp) => {
                 sex: user[i].stu_sex,
                 classname: user[i].classname
             }
-            console.log(s);
             return resp.send(s)
         }
     }
@@ -176,16 +174,16 @@ router.get("/api/stugetchazhao", (req, resp) => {
     }
     for (let i = 0; i < students.length; i++) {
         if (students[i].stu_name.indexOf(query.name) >= 0) {
+            ss++
             biao = true;
             s += `<tr>
-        <td>${i + 1}</td>
+        <td>${ss}</td>
         <td>${students[i].stu_name}</td>
         <td>${students[i].stu_age}</td>
         <td>${students[i].stu_sex}</td>
         <td>${cla(students[i].classname)}</td>
         <td>${thname(students[i].classname)}</td>
         <td><button onclick="shan(${students[i].id})">删除</button><button onclick="xiugai(${students[i].id})" data-target="#myModal2" data-toggle="modal">修改</button></td>
-        <td></td>
       </tr>`
         }
     }

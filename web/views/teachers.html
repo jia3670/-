@@ -14,7 +14,7 @@
 
 <body>
     <h1>教师表</h1>
-    <p><input type="text" id="chazhao" placeholder="教师名称"><button onclick="chazhao()">查找</button></p>
+    <p><input type="text" id="chazhao" placeholder="教师名称"><button onclick="chazhao()">查找</button><button data-target="#myModal" data-toggle="modal" onclick="xrtj()">添加老师</button></p>
     <div id="d1">
         <table>
             <thead>
@@ -23,7 +23,6 @@
                     <th>教师名称</th>
                     <th>所属班级</th>
                     <th>操作</th>
-                    <th data-target="#myModal" data-toggle="modal" onclick="xrtj()">添加老师</th>
                 </tr>
             </thead>
             <tbody id="tbody">
@@ -32,8 +31,8 @@
     </div>
     <!-- 模态框添加老师 -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
+        <div class="modal-dialog"style="width: 300px">
+            <div class="modal-content"style="margin-top: 120px; ">
                 <div class="modal-body" style="height:100px;">
                     <p>教师名称：<input type="text" name="" id="teachername1"></p>
                     <p>班级名称：<select name="" id="classname1"></select></p>
@@ -50,8 +49,8 @@
     </div>
     <!-- 模态框修改老师 -->
     <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
+        <div class="modal-dialog"style="width: 300px">
+            <div class="modal-content"style="margin-top: 120px;">
                 <div class="modal-body" style="height:100px;">
                     <p>教师名称：<input type="text" name="" id="teachername2"></p>
                     <p>班级名称：<select name="" id="classname2"></select></p>

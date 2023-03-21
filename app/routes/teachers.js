@@ -12,9 +12,7 @@ router.post("/api/thpost", (req, resp) => {
     }
     let user = JSON.parse(use);
     let classname = fs.readFileSync("./api/classnames.txt","utf-8");
-    console.log(classname);
     let classnames = JSON.parse(classname);
-    console.log(classnames);
     function xrb(id) {
         for (let j = 0; j < classnames.length; j++) {
             if (classnames[j].id == id) {
@@ -28,7 +26,6 @@ router.post("/api/thpost", (req, resp) => {
               <td>${user[i].teachername}</td>
               <td>${xrb(user[i].cid)}</td>
               <td><button onclick="shan(${user[i].id})">删除</button><button onclick="xiugai(${user[i].id})" data-target="#myModal2" data-toggle="modal">修改</button></td>
-              <td></td>
             </tr>`
     }
     return resp.end(s)
@@ -119,6 +116,7 @@ router.get("/api/thgetchazhao", (req, resp) => {
     let query = req.query;
     let use = fs.readFileSync("./api/teacher.txt");
     let user = JSON.parse(use);
+    let ss=0;
     let s = '';
     let classname = fs.readFileSync("./api/classnames.txt");
     let classnames = JSON.parse(classname);
@@ -133,12 +131,12 @@ router.get("/api/thgetchazhao", (req, resp) => {
     for (let i = 0; i < user.length; i++) {
         if (user[i].teachername.indexOf(query.name) >= 0) {
             biao = true;
+            ss++
             s += `<tr>
-        <td>${i + 1}</td>
+        <td>${ss}</td>
         <td>${user[i].teachername}</td>
         <td>${xrb(user[i].cid)}</td>
         <td><button onclick="shan(${user[i].id})">删除</button><button onclick="xiugai(${user[i].id})" data-target="#myModal2" data-toggle="modal">修改</button></td>
-        <td></td>
       </tr>`
         }
     }

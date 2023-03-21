@@ -18,7 +18,6 @@ router.post("/api/clpost", (req, resp) => {
               <td>${i + 1}</td>
               <td>${classnames[i].classname}</td>
               <td><button onclick="shan(${classnames[i].id})">删除</button><button onclick="xiugai(${classnames[i].id})" data-target="#myModal2" data-toggle="modal">修改</button></td>
-              <td></td>
             </tr>`
   }
   return resp.end(s)
@@ -121,11 +120,11 @@ router.get("/api/clgetchazhao", (req, resp) => {
   for (let i = 0; i < user.length; i++) {
     if (user[i].classname.indexOf(query.name) >= 0) {
       biao = true;
+      ss++
       s += `<tr>
-        <td>${ss + 1}</td>
+        <td>${ss}</td>
         <td>${user[i].classname}</td>
         <td><button onclick="shan(${user[i].id})">删除</button><button onclick="xiugai(${user[i].id})" data-target="#myModal2" data-toggle="modal">修改</button></td>
-        <td></td>
       </tr>`
     }
   }
