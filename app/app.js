@@ -7,8 +7,9 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 let cors = require('cors');
 let fs = require("fs")
-
+let md5=require("md5-node")
 var app = express();
+let jwt = require("jsonwebtoken")
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -27,7 +28,8 @@ app.use(require("./routes/teachers.js"))
 app.use(require("./routes/classnames.js"))
 app.use(require("./routes/students.js"))
 app.use(require("./routes/register.js"))
-
+app.use(require("./routes/imghuixian.js"))
+app.use(require("./routes/hhtt.js"))
 // catch 404 and forward to error handler
 // app.use(function(req, res, next) {
 //   next(createError(404));
