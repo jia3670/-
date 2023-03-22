@@ -28,7 +28,7 @@ router.post("/api/addById2", function (req, resp) {
     query.id = user[user.length - 1].id + 1;
     query.quanxian = parseInt(query.quanxian);
     user[user.length] = query
-    fs.writeFile("./api/register.txt", `[${JSON.stringify(user)}]`, function () {
+    fs.writeFile("./api/register.txt",JSON.stringify(user), function () {
         return resp.send("z")
     })
 })
